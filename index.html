@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- تحديد الترميز ليدعم اللغة العربية والرموز -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لجعل الموقع متجاوب على كل الأجهزة -->
+  <title>Suhaib | Web Developer</title> <!-- عنوان الموقع الذي يظهر في التبويب -->
+  <link rel="stylesheet" href="style.css"> <!-- ربط ملف CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+</head>
+<body>
+  <script src="script.js"></script>
+  <!-- الهيدر: يحتوي على الاسم وقائمة التنقل -->
+  <header>
+    <div class="header-bg"></div>
+    <h1>
+      <span>S</span><span>u</span><span>h</span><span>a</span><span>i</span><span>b</span>
+    </h1> <!-- اسمك أو شعارك -->
+    <nav>
+
+      <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+      🌙</button>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About my</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+    <div class="social-buttons">
+      <a href="https://github.com/suhaib-webdeveloper" class="social-btn github" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com/suhaib_webdeveloper/" class="social-btn instagram" target="_blank" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/suhaib-almaqalh-a1bb02371" class="social-btn linkedin" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- قسم الترحيب أو الهيرو -->
+  <section id="home" class="reveal">
+    <h2> Hi My Name is suhaib  👋</h2>
+    <p>I'm a web developer and this is my website</p>
+    <p id="typewriter" class="type-effect"></p>
+
+  </section>
+
+  <!-- قسم من أنا -->
+  <section id="about" class="reveal fancy-about">
+  <div class="about-box glow-box">
+    <h2>Who Am I?</h2>
+    <p class="glow">
+     Hello! I'm <strong>Suhaib</strong>, a web developer born from code and weird dreams.  
+         I don’t build boring websites. I build sites that breathe… that move… that make people blink twice. I use a mix of  
+         HTML, CSS, JavaScript, and a sprinkle of madness — that’s my recipe.  
+         I’m not here to follow trends; I’m here to set them.  
+         I don’t just write code; I create experiences.  
+         My goal? Simple: Make something so unique it makes you ask, “Who made this?”  
+         If you’re looking for ordinary, sorry you’re in the wrong place.
+    </p>
+  </div>
+</section>
+
+
+
+ 
+  <section id="skills" class="reveal">
+  <h2>My Skills</h2>
+  <div class="vertical-skills">
+
+    <div class="skill-bar">
+      <div class="bar" style="height: 90%;">
+        <span>HTML</span>
+      </div>
+    </div>
+
+    <div class="skill-bar">
+      <div class="bar" style="height: 85%;">
+        <span>CSS</span>
+      </div>
+    </div>
+
+    <div class="skill-bar">
+      <div class="bar" style="height: 70%;">
+        <span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="skill-bar">
+      <div class="bar" style="height: 65%;">
+        <span>Node.js</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- قسم المشاريع -->
+
+  <section id="projects" class="reveal">
+  <h2>My Projects</h2>
+
+  <div class="project-grid">
+
+    <!-- المشروع 1 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 1</h3>
+      <img src="images/project1.jpg" alt="No Project Yet">
+      <a href="#" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <!-- المشروع 2 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 2</h3>
+      <img src="images/project2.jpg" alt="No Project Yet">
+      <a href="#" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <!-- المشروع 3 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 3</h3>
+      <img src="images/project3.jpg" alt="No Project Yet">
+      <a href="#" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <!-- المشروع 4 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 4</h3>
+      <img src="images/project4.jpg" alt="No Project Yet">
+      <a href="#" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <!-- المشروع 5 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 5</h3>
+      <img src="images/project5.jpg" alt="No Project Yet">
+      <a href="#" target="_blank" class="project-link">View Project</a>
+    </div>
+
+  </div>
+  
+</section>
+
+  <!-- قسم التواصل -->
+  <section id="contact" class="reveal">
+    <h2>Contact Me</h2>
+   
+ <form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+  </section>
+
+    <!-- الفوتر -->
+  <footer>
+    <p>© 2025 Suhaib. All rights reserved.</p>
+  </footer>
+
+  <!-- 🧠 سكربت إرسال النموذج -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      console.log("📨 نحاول إرسال البيانات إلى السيرفر...");
+
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      try {
+        const response = await fetch("http://localhost:3000/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        alert(result.message || result.error);
+      } catch (error) {
+        alert("❌ حدث خطأ أثناء إرسال الرسالة.");
+        console.error(error);
+      }
+    });
+  </script>
+   
+<script src="script.js"></script>
+</body>
+</html>

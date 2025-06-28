@@ -1,0 +1,614 @@
+/* إعدادات أساسية للجميع */
+* {
+  margin: 0; /* إزالة الفراغ الخارجي الافتراضي */
+  padding: 0; /* إزالة الفراغ الداخلي الافتراضي */
+  box-sizing: border-box; /* جعل الحواف الداخلية لا تؤثر على الحجم الكامل */
+  scroll-behavior: smooth; /* يجعل التنقل بين الأقسام سلس */
+}
+
+/* إعداد شكل الخط على مستوى الموقع */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* نوع الخط */
+  line-height: 1.6; /* تباعد بين السطور */
+  background-color: #f4f4f4; /* لون خلفية الموقع */
+  color: #333; /* لون النص الأساسي */
+}
+
+/* تهيئة الهيدر */
+header {
+  background-color: #1e1e1e; /* خلفية الهيدر */
+  color: #fff; /* لون النص في الهيدر */
+  padding: 20px 0; /* مساحة داخلية أعلى وأسفل */
+  position: sticky; /* يبقى الهيدر بالأعلى عند التمرير */
+  top: 0;
+  z-index: 1000; /* لضمان ظهوره فوق باقي العناصر */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+  position: relative;
+  overflow: hidden;
+}
+
+/* خلفية متحركة للهيدر */
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 0;
+  background: linear-gradient(120deg, #111 40%, #222 60%, #099c7a 100%);
+  background-size: 200% 200%;
+  animation: moveBg 5s linear infinite alternate;
+  border-bottom-left-radius: 40% 60px;
+  border-bottom-right-radius: 40% 60px;
+  opacity: 0.85;
+  filter: blur(1px);
+}
+
+@keyframes moveBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* اسمك في الهيدر */
+header h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+header h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-30px) scale(0.8) rotate(-10deg);
+  animation: letterIn 0.6s forwards;
+}
+header h1 span:nth-child(1) { animation-delay: 0.05s; }
+header h1 span:nth-child(2) { animation-delay: 0.15s; }
+header h1 span:nth-child(3) { animation-delay: 0.25s; }
+header h1 span:nth-child(4) { animation-delay: 0.35s; }
+header h1 span:nth-child(5) { animation-delay: 0.45s; }
+header h1 span:nth-child(6) { animation-delay: 0.55s; }
+
+@keyframes letterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* القائمة داخل الهيدر */
+nav ul {
+  list-style: none; /* إزالة النقاط */
+  display: flex; /* جعل العناصر بجانب بعض */
+  justify-content: center; /* توسيط العناصر */
+  gap: 20px; /* فراغ بين الروابط */
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none; /* إزالة الخط السفلي */
+  color: #fefefe; /* لون الروابط */
+  font-weight: bold;
+  transition: color 0.3s ease; /* تأثير ناعم عند المرور */
+}
+
+nav a:hover {
+  color: #00ffcc; /* لون عند التمرير */
+}
+
+/* الأقسام العامة */
+section {
+  padding: 60px 20px; /* مساحة داخلية كبيرة */
+  max-width: 1000px; /* عرض أقصى للقسم */
+  margin: auto; /* توسيط القسم */
+}
+
+/* العنوان داخل كل قسم */
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+/* فقرة الوصف */
+section p {
+  font-size: 18px;
+  text-align: center;
+  color: #555;
+}
+
+/* قسم المشاريع */
+.project-card {
+  background-color: #ffffff; /* خلفية بيضاء */
+  padding: 20px;
+  border-radius: 10px; /* زوايا دائرية */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* تأثير الحركة */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* تحريك البطاقة عند المرور */
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.project-card p {
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #00d1b2;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* قسم التواصل */
+form {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  gap: 15px; /* فراغ بين الحقول */
+  max-width: 500px;
+  margin: auto;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* إطار خفيف */
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #00d1b2;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #009e8f;
+}
+
+/* الفوتر */
+footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* أنيميشن الظهور التدريجي */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* أنيميشن الهيدر عند التمرير */
+header.scrolled {
+  background-color: #111;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* زر الإرسال عند الضغط */
+form button:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(0,209,178,0.2);
+}
+
+header h1,
+header nav {
+  position: relative;
+  z-index: 2;
+}
+
+/* أزرار التواصل الاجتماعي */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d1b2 40%, #9900ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+  animation: socialPop 0.7s cubic-bezier(.77,0,.18,1);
+  align-self: start;
+}
+
+.social-btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  left: -110%;
+  top: -10%;
+  background: linear-gradient(120deg, #fff 0%, #00d1b2 100%);
+  opacity: 0.12;
+  border-radius: 50%;
+  animation: socialWave 2.5s linear infinite;
+  z-index: 0;
+}
+
+.social-btn:hover {
+  transform: scale(1.13) rotate(-6deg);
+  box-shadow: 0 4px 24px #00d1b2aa;
+}
+
+.social-btn i {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes socialWave {
+  0% { left: -110%; }
+  100% { left: 110%; }
+}
+
+@keyframes socialPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* الوضع العادي */
+body {
+  background-color: white;
+  color: black;
+  transition: 0.3s ease;
+}
+
+/* الوضع الداكن */
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1; /* ← غير لون النص هنا */
+}
+
+/* روابط في الوضع الداكن */
+body.dark a {
+  color: #9ecbff;
+}
+
+/* رؤوس الأقسام */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #ffffff;
+}
+
+/* محتوى الكروت */
+body.dark .project-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #ddd;
+}
+
+/* زر الإرسال */
+body.dark button {
+  background-color: #333;
+  color: white;
+}
+/* الزر الأساسي */
+/* زر أيقونة الوضع الليلي */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #222;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* تأثير hover */
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: #ddd;
+}
+
+/* الوضع الليلي */
+body.dark .theme-toggle {
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+/* الوضع الأولي للعناصر */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* عندما تدخل في الشاشة */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-title {
+  font-size: 20px;
+  margin: 16px;
+  color: #333;
+}
+
+.project-link {
+  display: inline-block;
+  margin: 16px;
+  padding: 8px 16px;
+  background-color: #596169;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #eff5fd;
+}
+
+/* الوضع الليلي */
+body.dark .project-card {
+  background-color: #1e1e1e;
+}
+
+body.dark .project-title {
+  color: #ddd;
+}
+
+body.dark .project-link {
+  background-color: #444;
+}
+
+body.dark .project-link:hover {
+  background-color: #666;
+}
+
+
+.vertical-skills {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-bar {
+  width: 60px;
+  height: 250px;
+  background-color: #eee;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #00c6ff, #0072ff);
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: flex-end; /* ← النص في الأسفل */
+  justify-content: center;
+  color: rgb(233, 233, 233);
+  font-size: 12px;
+  padding-bottom: 8px; /* ← مسافة تحت */
+  transition: height 1.5s ease, box-shadow 0.3s;
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+
+.bar:hover {
+  box-shadow: 0 0 10px 4px rgba(0, 123, 255, 0.6), inset 0 0 5px rgba(255,255,255,0.3);
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark .skill-bar {
+  background-color: #333;
+}
+
+body.dark .bar {
+  background: linear-gradient(180deg, #00f2ff, #005aff);
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px rgba(0, 123, 255, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(0, 123, 255, 0.0);
+  }
+}
+
+.type-effect {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0072ff;
+  white-space: nowrap;
+  border-right: 2px solid #0072ff;
+  width: fit-content;
+  overflow: hidden;
+}
+
+/* قسم من أنا مع لمعان شامل */
+.fancy-about {
+  background: transparent; /* نحذف الخلفية السوداء */
+  padding: 60px 20px;
+  color: #070606;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+
+.fancy-about .about-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.fancy-about .about-box:hover {
+  transform: scale(1.02);
+}
+
+.fancy-about h2 {
+  font-size: 2.5rem;
+  color: #254544;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #00fff7, 0 0 12px #00fff7;
+  letter-spacing: 1px;
+}
+
+/* تأثير لمعان دائم للفقرات */
+.fancy-about p.glow {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #3e2525;
+  animation: glowAll 2.5s infinite alternate ease-in-out;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #00ffff80;
+  padding: 0 10px;
+  text-align: left;
+}
+
+@keyframes glowAll {
+  0% {
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 15px #00ffff80;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #00ffffaa;
+  }
+}
+
+.glow-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.07);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* الزوايا المتوهجة */
+.glow-box::before,
+.glow-box::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: conic-gradient(
+    from 0deg,
+    #0299df 0deg,
+    transparent 90deg,
+    #02c299 180deg,
+    transparent 270deg,
+    #299ba5 360deg
+  );
+  animation: rotateBorder 4s linear infinite;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+/* .glow-box::after {
+  filter: blur(20px);
+  opacity: 0.5;
+} */
+
+
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
